@@ -1,0 +1,51 @@
+﻿@page
+@model ST10116374_PROG6212_POE.Pages.Modules.SetDayModel
+@{
+}
+@*this is how the form is structured, with input texts that allign with where the data needs to go*@
+<br>
+<h2>New Modules</h2>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Day</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="sday" value="@Model.listsetday.sday">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Module Code</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="mdscode" value="@Model.listsetday.mdscode">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Study hours for the day</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="studyhrs" value="@Model.listsetday.studyhrs">
+        </div>
+    </div>
+    @if (Model.succesMesage.Length > 0)
+    {
+        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>@Model.succesMesage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Modules/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

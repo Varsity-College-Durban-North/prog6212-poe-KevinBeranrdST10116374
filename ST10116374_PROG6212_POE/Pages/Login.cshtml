@@ -1,0 +1,43 @@
+﻿@page
+@model ST10116374_PROG6212_POE.Pages.LoginModel
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Login</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@if (Model.errorMessage.Length > 0)@* this is the error message that will appear when the user doesn't enter the right input *@
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+    </div>
+}
+@*this is how the form is structured, with input texts that allign with where the data needs to go*@
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.userinfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" name="password" value="@Model.userinfo.password">
+        </div>
+    </div>
+    @if (Model.succesMesage.Length > 0)
+    {
+        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>@Model.succesMesage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+        </div>
+    }@* this is the success message that will appear when the user does enter the right input *@
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</form>

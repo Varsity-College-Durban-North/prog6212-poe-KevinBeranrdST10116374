@@ -1,0 +1,76 @@
+﻿@page
+@model ST10116374_PROG6212_POE.Pages.Modules.IndexModel
+@{
+}
+@*this is how the form is structured, with input texts that allign with where the data needs to go*@
+<br>
+<h2>List of Modules</h2>
+<a class='btn btn-primary btn-sm' href='/Modules/Create'> New Module</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Credits</th>
+            <th>Houres per week</th>
+            <th>Weeks</th>
+            <th>Start Date</th>
+            <th>Current Hours</th>
+            <th>Selfstudy Hours</th>
+            <th>Selfstudy left</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listModules)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.mdcode</td>
+                <td>@item.mdname</td>
+                <td>@item.credits</td>
+                <td>@item.hourspweek</td>
+                <td>@item.weeks</td>
+                <td>@item.startdate</td>
+                <td>@item.CurrentHours</td>
+                <td>@item.Selfstudyhrs</td>
+                <td>@item.Selfstudyleft</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Modules/Edit?id=@item.id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/Modules/Delete?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<h2>Reminder for set Days!!!</h2>
+<a class='btn btn-primary btn-sm' href='/Modules/SetDay'>Set a new day for study</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Day</th>
+            <th>Module Code</th>
+            <th>Study Hours</th>
+            <th>Date Created On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listSetDay)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.sday</td>
+                <td>@item.mdscode</td>
+                <td>@item.studyhrs</td>
+                <td>@item.datecreatedon</td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/Modules/Deletesetday?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@page
+@model ST10116374_PROG6212_POE.Pages.Modules.CreateModel
+@{
+}
+@*this is how the form is structured, with input texts that allign with where the data needs to go*@
+<br>
+<h2>New Modules</h2>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Code</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="code" value="@Model.moduleinfo.mdcode">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.moduleinfo.mdname">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Credits</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="credits" value="@Model.moduleinfo.credits">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Weeks</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="weeks" value="@Model.moduleinfo.weeks">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Hours Per Week</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="hours_per_week" value="@Model.moduleinfo.hourspweek">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Start Date</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="start_date" value="@Model.moduleinfo.startdate">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Current_Hours</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="current_hours" value="@Model.moduleinfo.CurrentHours">
+        </div>
+    </div>
+
+    @if (Model.succesMesage.Length > 0)
+    {
+        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>@Model.succesMesage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="close" l></button>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Modules/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

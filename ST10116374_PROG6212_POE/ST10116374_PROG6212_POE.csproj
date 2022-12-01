@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ST10116374_PROG6212_POE_ClassLibrary">
+      <HintPath>..\..\ST10116374_PROG6212_POE_Class Library\ST10116374_PROG6212_POE_ClassLibrary\ST10116374_PROG6212_POE_ClassLibrary\bin\Debug\net6.0\ST10116374_PROG6212_POE_ClassLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
